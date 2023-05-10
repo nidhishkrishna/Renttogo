@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+  <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" href="./logo_big.png">
+  <title>Rentogo</title>
+</head>
+<body onload="func()">
+    <nav class="navbar navbar-inverse" style="background-color: white;border-style: none;">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <br>
+            <a class="navbar-brand" href="#"><div class="logo" style="color: black;">REN<span style="color: #FF5733;">T</span>OGO</div></a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li><a href="http://localhost:5000/index" style="color: #000;">Home</a></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: black;">RENT<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="http://localhost:5000/renty">LAPTOP</a></li>
+                  <li><a href="#">TEXT BOOKS AND NOTES</a></li>
+                  <li><a href="#">OTHERS</a></li>
+                </ul>
+              </li>
+              <li><a href="http://localhost:5000/lease" style="color: black;">LEASE</a></li>
+              <li><a href="http://localhost:5000/serv" style="color: #FF5733;">SERVICE FLYERS</a></li>
+              <li><a href="http://localhost:5000/pserv" style="color: black;">POST A SERVICE</a></li>
+              <li><a href="http://localhost:5000/policy" style="color: black;">ABOUT</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" style="padding: 2%;">
+                <!-- <div class="butt"><Button style="padding-right:50%;background-color: #FF5733;border-radius: 5%; border-color: #FF5733; width: 290%;height: 100%;"><a href="http://localhost:5000/pserv" style="color: white;">Post Your Serivce</a></Button></i></div> -->
+
+              <div class="search" style="padding-right: 50%;"><i class="fa fa-search"></i></div>
+
+            <div class="search" style="padding-right: 50%;"><a href="./cart.html"><i class="fa fa-shopping-cart"></i></a></div>
+            <div class="cart" style="padding-right: 40%;"><a href="./login.html"><i class="i fa fa-user"></i></a></div>
+            </ul>
+          </div>
+        </div>
+        </nav>
+    <div id="result"></div>
+      
+        
+</body>
+
+
+<script>
+    
+    function func(){
+    fetch('http://localhost:5000/re1',{
+            mode:'cors',
+            method:'POST',
+            headers:{
+                'Content-type':'application/json'
+            }
+        
+        })
+        .then((e)=>{
+            
+            return e.json()  
+        })
+        .then(async(e1)=>
+        {  
+
+            
+            if(e1.length!=0)
+            {
+            let temp ="" ;
+            let n1=1;
+            // Loop through each data and add a table row
+            for(let d of e1)
+            {
+
+                temp +=`<div class="container">
+            <div class="row">
+                <div class="col-md-4" >
+                    <center><img src="${d.avatar}" alt="Error" style="margin-top: 10vh;width: 90%;height: 850%;"></center>
+                </div>
+                <div class="col-md-8">
+                    <b><h1 style="font-size: .7cm;">${d.cat}</h1></b>
+                    
+                    <h2 style="font-size: .6cm;"><i class="fa fa-map-marker"></i>   ${d.loc}</h2>
+                    <b><h1 style="font-size: .7cm;">₹ ${d.wage} per day</h1></b>
+                    <hr style="border-color: #FF5733;">
+                    <h2 style="font-size: .6cm;">Description</h2>
+                    <p style="font-size: .4cm;">${d.desc}</p>
+                    <hr style="border-color: #FF5733;">
+                    <br><br><br>
+                </div>
+            </div>
+        </div>`;
+                n1+=1;
+            }
+
+        document.getElementById("result").innerHTML = temp;
+        }
+        else{
+            document.getElementById("result").innerHTML = "No record found";
+        }
+          
+        })
+        .catch(async()=>{
+            console.log("ERROR");
+            result.innerHTML="ERROR";
+        })
+    }
+
+
+</script>
+ 
+
+
+
+</html>
+
+  
+   
+ 
+
+
+
+
+   
+
+
+
+
+
+
+            

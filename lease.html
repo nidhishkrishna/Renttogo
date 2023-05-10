@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" href="./logo_big.png">
+    <style>
+      input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+    </style>
+  <title>Rentogo</title> 
+</head>
+<body>
+
+<nav class="navbar navbar-inverse" style="background-color: white;border-style: none;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <br>
+      <a class="navbar-brand" href="#"><div class="logo" style="color: black;">REN<span style="color: #FF5733;">T</span>OGO</div></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="http://localhost:5000/index" style="color: #000;">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: black;">RENT<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://localhost:5000/renty">LAPTOP</a></li>
+            <li><a href="#">TEXT BOOKS AND NOTES</a></li>
+            <li><a href="#">OTHERS</a></li>
+          </ul>
+        </li>
+        <li><a href="http://localhost:5000/lease" style="color: #FF5733;">LEASE</a></li>
+        <li><a href="http://localhost:5000/serv" style="color: black;">SERVICE FLYERS</a></li>
+        <li><a href="http://localhost:5000/policy" style="color: black;">ABOUT</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" style="padding: 2%;">
+        <div class="search" style="padding-right: 50%;"><i class="fa fa-search"></i></div>
+      <div class="search" style="padding-right: 50%;"><a href="./cart.html"><i class="fa fa-shopping-cart"></i></a></div>
+      <div class="cart" style="padding-right: 40%;"><a href="./login.html"><i class="i fa fa-user"></i></a></div>
+      </ul>
+    </div>
+  </div>
+</nav>
+          <div id="Animation"  style="height: 100vh;">
+      
+    <div id="animation" style="height: 90vh;">
+        <div class="container" >
+            <div class="row">
+              <div class="col-sm-4" style="background-color: #C70039 ; height: 15.3cm;">
+                <br><br><br>
+                <h1 style="color: white;">Welcome To</h1>
+                <div class="logo" style="color: white;">REN<span style="color: greenyellow;">T</span>OGO</div>
+                </h1><br><br>
+                <h4 style="color: #E5E4E2;">Rentogo Is Your Ticket To A Better Lifestyle.</h4>
+                <br><br>
+                <h5 style="color: #E5E4E2;">Safety precautions during COVID-19. We’re taking additional steps and precautionary measures to protect our community from COVID-19.  
+                  </h5>
+                  <br><br><br>
+                  <h5 style="color: #E5E4E2;">The Files Maximum Size Should Be Not More Than 2 Mb
+                  </h5>
+              
+              </div>
+              <div class="col-sm-8" style="background-color: white;height: 15.3cm;">
+                <form action="http://localhost:5000/lease1" method="post" onsubmit="return myFunction()"  enctype="multipart/form-data">
+                   <center> <h1 style="color: #581845;">Want To Give For Rent</h1></center>
+                   <center><div class="icon" style="font-size: x-large;">
+                    <i class="fa fa-whatsapp whatsapp-icon" style="padding: 3vh;"></i>
+                    <i class="fa fa-instagram instagram-icon" style="padding: 3vh;"></i>
+                    <i class="fa fa-facebook facebook-icon" style="padding: 3vh;"></i>
+                    <i class="fa fa-linkedin linkedin-icon" style="padding: 3vh;"></i>
+                   </div></center>
+                   <br><br>
+                   <select id="cat" name="cat" style="margin-left: 1.2cm;background-color: rgba(0,0,0,0); border-style: none;font-size: large"><br><br><br>
+                    <option value="volvo">CATEGORIES</option>
+                    
+                    <option value="Bike">BIKE</o0ption>
+                    <option value="Camera">CAMERA AND ACCESSORIES</option>
+                    <option value="Laptop">LAPTOP</option>
+                    <option value="book">TEXT BOOKS AND NOTES</option>
+                    <option value="others">OTHERS</option>
+                  </select><br><br>
+                   <!-- <input type="text" id="name" name="name" placeholder="USER NAME" style="margin-left: 1cm;background-color: rgba(0,0,0,0);"><br> -->
+                   <input type="number" maxlength="10" minlength="10" id="pno" name="pno" placeholder="PHONE NUMBER" onKeyPress="if(this.value.length==10) return false;" style="margin-left: 1cm;background-color: rgba(0,0,0,0);border-style: none;font-size: large" required><br><br>
+                   <input type="text" id="deposit" name="deposit" placeholder="DEPOSITE AMOUNT" style="margin-left: 1cm;background-color: rgba(0,0,0,0);border-style: none;font-size: large" required><br><br>
+                   <input type="text" id="min" name="min" placeholder="RENT PER DAY" style="margin-left: 1cm;background-color: rgba(0,0,0,0);border-style: none;font-size: large" required><br><br>
+                   <!-- <input type="text" id="max" name="max" placeholder="RENT FOR TIME LONGER THAN A WEEK" style="margin-left: 1cm;background-color: rgba(0,0,0,0);" required><br> -->
+                   <input type="" id="desc" name="desc" placeholder="Description" style="margin-left: 1cm;background-color: rgba(0,0,0,0);border-style: none;font-size: large" required><br><br>
+                   <input type="file" id="image" name="image" style="margin-left: 1cm;background-color: rgba(0,0,0,0);border-style: none;font-size: large" required onchange="validateSize(this)"><br><br>
+                   <!-- <input type="submit" value="NEXT" style="background-color: #FFC300; width:5cm;color: white;margin-left: 1cm;"><br> -->
+                   <button id="bt" type="submit" value="NEXT" style="background-color: #C70039 ; width:5cm;color: white;margin-left: 1cm;border-color: white;height: 1cm;border-style: none;font-size: large">NEXT</button><br>
+                </form>
+               
+              </div>
+`
+    </div>
+    <script>
+      function validateSize(input) {
+  const fileSize = input.files[0].size / 1024 / 1024; // in MiB
+  if (fileSize > 2) {
+    alert('File size exceeds 2 MB');
+    document.getElementById('image').value= null;
+    // $(file).val(''); //for clearing with Jquery
+  } else {
+    // Proceed further
+
+  }
+}
+        document.querySelector("#pno").addEventListener("keypress", function (evt) {
+    if (evt.which != 8 && evt.which != 0 && evt.which < 48 || evt.which > 57)
+    {
+        evt.preventDefault();
+    }
+});
+        
+      
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <script>
+        VANTA.GLOBE({
+          el: "#animation",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          color: "#ff5733",
+          size: 2.00,
+          backgroundColor: 0xffffff
+        })
+        </script>
+</body>
+</html>
+
+
+
+
+

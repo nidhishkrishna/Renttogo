@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rentogo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    .container {
+      position: relative;
+      width: 50%;
+    }
+    
+    .image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: .5s ease;
+      background-color: #FF5733;
+    }
+    
+    .container:hover .overlay {
+      opacity: 1;
+    }
+    
+    .text {
+      color: white;
+      font-size: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    </style>
+     <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="./logo_big.png">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body onload="finc()">
+    <div class="wrapper">
+        <div class="nav">
+          <div class="logo">REN<span style="color: #FF5733;">T</span>OGO</div>
+    
+          <div class="menu-links">
+            <ul>
+              <li><a href="http://localhost:5000/index" style="color: black;">Home</a></li>
+              <li><a href="http://localhost:5000/rent" style="color: #FF5733;">Rent</a></li>
+              <li><a href="http://localhost:5000/lease" style="color: black;">Lease</a></li>
+              <li><a href="http://localhost:5000/serv" style="color: black;">Service Flyers</a></li>
+
+              <li><a href="#" style="color: black;">About</a></li>
+              <li><a href="http://localhost:5000/policy" style="color: black;">Policy</a></li>
+              <li><a href="#" style="color: black;">Contact</a></li>
+
+             
+            </ul>
+          </div>
+    
+          <div class="search"><i class="fa fa-search"></i></div>
+    
+          <div class="cart"><a href="./login.html" style="color: black;"><i class="i fa fa-user"></i></a></div>
+          </div>
+    <div>
+        <br><br>
+
+        
+        <div class="container-fluid" style="padding: 1cm;">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="container" style="width: 60%;height: 50%;">
+                    <img src="./public/lap.png" alt="Error" class="image">
+                    <div class="overlay">
+                      <div class="text">
+                        <a href="http://localhost:5000/renty" style="text-decoration: none;"><h1 style="color: white;">LAPTOP</h1>
+                          <hr style="width: 100%;">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-md-6" >
+                <div class="container" style="width: 60%;height: 50%;">
+                    <img src="./public/book.png" alt="Error" class="image">
+                    <div class="overlay">
+                      <div class="text">
+                        <a href="" style="text-decoration: none;"><h1 style="color: white;">BOOKS AND NOTES</h1>
+                          <hr style="width: 100%;">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+       
+</body>
+</html>
+

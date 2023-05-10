@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./public/form.css">
+        <link rel="stylesheet" href="./public/lease.css">
+        <title>Form page</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+
+
+<body>
+    <div class="wrapper">
+        <div class="nav">
+          <div class="logo">REN<span style="color: #FF5733;">T</span>OGO</div>
+    
+          <div class="menu-links">
+            <ul>
+                <li><a href="http://localhost:5000/index" style="color: #000;">Home</a></li>
+                <li><a href="http://localhost:5000/rent" style="color: #000;">Rent</a></li>
+                <li><a href="http://localhost:5000/lease" style="color: #FF5733;">Lease</a></li>
+                <li><a href="#" style="color: #000;">About</a></li>
+                <li><a href="http://localhost:5000/policy" style="color: black;">Policy</a></li>
+                <li><a href="./contacts.html" style="color: #000;">Contact</a></li>
+              </ul>
+          </div>
+    
+          <div class="search"><i class="fa fa-search"></i></div>
+    
+          <div class="cart"><a href="http://localhost:5000/login"><i class="i fa fa-user"></i></a></div>
+          </div>
+          <div id="Animation"  style="height: 100vh;">
+      
+    <div id="animation" style="height: 100vh;">
+        <div class="container" >
+            <div class="row">
+              <div class="col-sm-4" style="background-color: #C70039 ; height: 15.3cm;">
+                <br><br><br>
+                <h1 style="color: white;">Welcome To</h1>
+                <div class="logo" style="color: white;">REN<span style="color: greenyellow;">T</span>OGO</div>
+                </h1><br><br>
+                
+                <h4 style="color: #E5E4E2;">Rentogo Is Your Ticket To A Better Lifestyle.</h4>
+                <br><br>
+                <h5 style="color: #E5E4E2;">Safety precautions during COVID-19. We’re taking additional steps and precautionary measures to protect our community from COVID-19.  
+                  </h5>
+              
+              </div>
+              <div class="col-sm-8" style="background-color: rgba(0,0,0,.1);height: 15.3cm;">
+                <form action="http://localhost:5000/leaselap" method="post">
+                   <center> <h1 style="color: #581845;">LAPTOP</h1></center>
+                   <br><br>
+                   <input type="text" id="name" name="name" placeholder="USER NAME" style="margin-left: 1cm;background-color: rgba(0,0,0,0);"><br><br>
+                   <input type="text" id="brand" name="brand" placeholder="LAPTOP BRAND & MODEL" style="margin-left: 1cm;background-color: rgba(0,0,0,0);"><br><br>
+                   <input type="text" id="yob" name="yob" placeholder="YEAR OF BUYING" style="margin-left: 1cm;background-color: rgba(0,0,0,0);"><br><br>
+                   <input type="text" id="ram" name="ram" placeholder=" LAPTOP RAM" style="margin-left: 1cm;background-color: rgba(0,0,0,0);"><br><br>
+                   <input type="text" id="rom" name="rom" placeholder="LAPTOP ROM" style="margin-left: 1cm;background-color: rgba(0,0,0,0);"><br><br>
+                   <input type="text" id="gpu" name="gpu" placeholder="LAPTOP GPU" style="margin-left: 1cm;background-color: rgba(0,0,0,0);"><br><br><br>
+                   <input type="submit" value="SUBMIT" style="background-color: #FFC300; width:5cm;color: white;margin-left: 1cm;"><br>
+                </form>
+               
+              </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <script>
+        VANTA.GLOBE({
+          el: "#animation",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          color: "#ff5733",
+          size: 2.00,
+          backgroundColor: 0xffffff
+        })
+        </script>
+</body>
+</html>

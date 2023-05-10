@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" href="./logo_big.png">
+  <title>Rentogo</title> 
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <div class="nav">
+      <div class="logo">REN<span style="color: #FF5733;">T</span>OGO</div>
+
+      <div class="menu-links">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="./rent.html">Rent</a></li>
+          <li><a href="./lease.html">Lease</a></li>
+          <li><a href="./service.html" style="color: #FF5733;">Service Flyers</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="#">Contact</a></li>
+          
+        </ul>
+      </div>
+
+      
+      <div class="butt"><Button style="background-color: #FF5733;border-radius: 5%; border-color: #FF5733; width: 3cm;height: 1cm;"><a href="#" style="color: white;">Post Your Serivce</a></Button></i></div>
+      <div class="search"><i class="fa fa-search"></i></div>
+      <div class="cart"><a href="./login.html"><i class="i fa fa-user"></i></a></div>
+      </div>
+  </div>
+
+  <div>
+    
+  </div>
+<br><br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" >
+                    <center><img src="./ichi.jpg" alt="Error" style="margin-top: 10vh;width: 90%;height: 850%;"></center>
+                </div>
+                <div class="col-md-8">
+                    <b><h1 style="font-size: .7cm;">Light Motor Vehicle Acting Driver for Daily Hire</h1></b>
+                    
+                    <h2 style="font-size: .6cm;"><i class="fa fa-map-marker"></i>   Erode</h2>
+                    <b><h1 style="font-size: .7cm;">₹ 1,000/Day</h1></b>
+                    <hr style="border-color: #FF5733;">
+                    <h2 style="font-size: .6cm;">Description</h2>
+                    <p style="font-size: .4cm;">I am a Badge holder who drives all kinds of four-wheeler, the above-mentioned charge will differ for other cities.</p>
+                    <hr style="border-color: #FF5733;">
+                    <br>
+                    <h2 style="font-size: .6cm;">Ratings and Reviews</h2>
+                    <p style="font-size: .4cm;">Good.</p>
+                </div>
+            </div>
+        </div>
+
+
+  <script>
+    var scene = document.getElementById('scene');
+    var parallax = new Parallax(scene);
+
+    TweenMax.staggerFrom(".logo", 1, {
+      opacity: 0,
+      x: -20,
+      ease: Expo.easeInOut
+    })
+
+    TweenMax.staggerFrom(".menu-links ul li", 1, {
+      opacity: 0,
+      y: -20000,
+      ease: Power3.easeInOut
+    }, 0.08)
+
+    TweenMax.from(".search", 1, {
+      delay: .6,
+      opacity: 0,
+      x: -20,
+      ease: Expo.easeInOut
+    })
+
+    TweenMax.from(".butt", 1, {
+      delay: .5,
+      opacity: 0,
+      x: -20,
+      ease: Expo.easeInOut
+    })
+
+    TweenMax.from(".account", 1, {
+      delay: .7,
+      opacity: 0,
+      x: -20,
+      ease: Expo.easeInOut
+    })
+
+    TweenMax.from(".cart", 1, {
+      delay: .8,
+      opacity: 0,
+      x: -20,
+      ease: Expo.easeInOut
+    })
+
+    TweenMax.from(".title", 1, {
+      delay: 1,
+      opacity: 0,
+      y: 20,
+      ease: Expo.easeInOut
+    })
+
+    TweenMax.from(".tagline", 1, {
+      delay: 1.3,
+      opacity: 0,
+      y: 20,
+      ease: Expo.easeInOut
+    })
+
+    TweenMax.from(".pages", 1, {
+      delay: 1.3,
+      opacity: 0,
+      y: 20,
+      ease: Expo.easeInOut
+    })
+
+    TweenMax.from(".more", 1, {
+      delay: 1.4,
+      opacity: 0,
+      y: 20,
+      ease: Expo.easeInOut
+    })
+
+    TweenMax.from(".desc", 1, {
+      delay: 1.4,
+      opacity: 0,
+      y: 20,
+      ease: Expo.easeInOut
+    })
+
+
+  </script>
+   
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+  <script>
+      VANTA.BIRDS({
+        el: "#Animation",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 100.00,
+        minWidth: 100.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        backgroundColor: 0xffffff,
+        color1: "#F2D7D5",
+        color2: 0x0
+      })
+      </script>
+</body>
+
+</html>

@@ -1,0 +1,233 @@
+r<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- <meta name="viewport" content="width=1000; user-scalable=0;" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+  <script>
+        
+    //initial setup
+    
+    
+</script>
+  <link rel="stylesheet" href="style.css">
+<script
+    src="https://kit.fontawesome.com/64d58efce2.js"
+    crossorigin="anonymous"
+  ></script>
+  <link rel="icon" href="./logo_big.png">
+  <style>
+    .modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+  </style>
+<title>Rentogo</title>
+</head>
+<body onload="func()">
+    
+<nav class="navbar navbar-inverse" style="background-color: white;border-style: none;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <br>
+      <a class="navbar-brand" href="#"><div class="logo" style="color: black;">REN<span style="color: #FF5733;">T</span>OGO</div></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="http://localhost:5000/index" style="color: #000;">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: #FF5733;">RENT<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://localhost:5000/renty">LAPTOP</a></li>
+            <li><a href="#">TEXT BOOKS AND NOTES</a></li>
+            <li><a href="#">OTHERS</a></li>
+          </ul>
+        </li>
+        <li><a href="http://localhost:5000/lease" style="color: black;">LEASE</a></li>
+        <li><a href="http://localhost:5000/serv" style="color: black;">SERVICE FLYERS</a></li>
+        <li><a href="http://localhost:5000/policy" style="color: black;">ABOUT</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" style="padding: 2%;">
+        <div class="search" style="padding-right: 50%;"><i class="fa fa-search"></i></div>
+      <div class="search" style="padding-right: 50%;"><a href="./cart.html"><i class="fa fa-shopping-cart"></i></a></div>
+      <div class="cart" style="padding-right: 40%;"><a href="./login.html"><i class="i fa fa-user"></i></a></div>
+      </ul>
+    </div>
+  </div>
+  </nav>
+    <div id="result"></div>
+      
+        
+</body>
+<script>
+    function func(){
+    fetch('http://localhost:5000/re',{
+            mode:'cors',
+            method:'POST',
+            headers:{
+                'Content-type':'application/json'
+            }
+        
+        })
+        .then((e)=>{
+            
+            return e.json()  
+        })
+        .then(async(e1)=>
+        {  
+            
+            if(e1.length!=0)
+            {
+            let t="";
+            let temp ="" ;
+            let n1=1;
+            // Loop through each data and add a table row
+            for(let d of e1)
+            {
+
+              if(d.rat==0){
+                t+=`no reviews yet`;
+              }
+              else{
+                t+=`${d.rat} out of 5`;
+              }
+                temp +=`<div class="container">
+            <div class="row">
+              <div class="col-md-6" style="top:20%;">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    
+                
+                    
+                   <center> 
+                      <div class="item active">
+                        <img src="${d.avatar}" alt="Los Angeles" style="width:50%;height:50%;">
+                      </div>
+                
+                      
+                    
+                
+                  
+                    
+                  </div></center>
+              </div>
+              <div class="col-md-6">
+                
+               
+                
+                   
+                        
+                      
+                     
+                        <center><h1 style="font-size: 18px;">MIN AMOUNT:RS ${d.min} / mo</h1></center>
+                        
+                      
+            
+              <br>
+              <button style="background-color: #FF5733; color: white; border-style: none; width: 10cm; height: 1cm;">Compare</button>
+              <h1 style="font-size: 18px;">High Lights</h1>
+          <p>${d.desc}</p>
+          <p>Ratting:${t}</p>
+          <div onload=></div>
+           
+           <h1 style="font-size: 18px; border-style: solid;padding: .3cm;">The amount can be paid either through cash or using UPI in the time of delivery</h1>
+           
+           </div>
+
+            <div class="container">
+              <div class="row">
+                <form action="http://localhost:5000/add" method="post">
+                  <div class="col-md-2" >
+                    <input type="text"  maxlength="10" minlength="10" id="pno" name="pno" placeholder="PHONE NUMBER" style="color: #000; width: 10cm; height: 1cm;margin-top: 0.7cm;" required><br><br>
+                    <button id="bt" name="bt" value="${d.pno}" style="background-color: #FF5733; color: white; border-style: none; width: 10cm; height: 1cm;margin-top: 0.7cm;"onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Add To Cart</button>
+                    <br>
+                    <br>
+                    <br>
+                  </div>
+                  </form>
+                  <br><br><br><br><br><br><br><br>
+                  <form action="http://localhost:5000/add1" method="post" style="position:absolute;left:25">
+                  
+        <p>Share your thoughts with other customers</p>
+        <input type="radio" id="age1" name="age" value="1">
+        <input type="radio" id="age2" name="age" value="2">
+        <input type="radio" id="age3" name="age" value="3">
+        <input type="radio" id="age2" name="age" value="4">  
+        <input type="radio" id="age3" name="age" value="5"><br>
+        <button value="${d.pno}" id="bt1" name="bt1" style="color: white;background-color: #FF5733;border-style: none;padding: 3%;">Submit A Product Review</button>
+
+                 
+                  </form>
+                  </div>
+                  <br/><br/>
+                  
+                  
+                  
+                  <br/><br/><br/><br/>
+                  `;
+                n1+=1;
+                t="";
+            }
+
+        document.getElementById("result").innerHTML = temp;
+        }
+        else{
+            document.getElementById("result").innerHTML = "No record found";
+        }
+          
+        })
+        .catch(async()=>{
+            console.log("ERROR");
+            result.innerHTML="ERROR";
+        })
+    }
+       
+        
+</script>
+</html>

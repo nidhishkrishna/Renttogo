@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./public/style.css">
+  <link rel="icon" href="./logo_big.png">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body onload="func()">
+    <div class="wrapper">
+        <div class="nav">
+          <div class="logo">REN<span style="color: #FF5733;">T</span>OGO</div>
+    
+            <div class="menu-links">
+                <ul>
+                <li><a href="http://localhost:5000/index" style="color: black;">Home</a></li>
+                <li><a href="http://localhost:5000/rent" style="color: #FF5733;">Rent</a></li>
+                <li><a href="http://localhost:5000/lease" style="color: black;">Lease</a></li>
+                <li><a href="http://localhost:5000/about" style="color: black;">About</a></li>
+                <li><a href="#" style="color: black;">Contact</a></li>
+                </ul>
+            </div>
+    
+          <div class="search"><i class="fa fa-search"></i></div>
+    
+          <div class="cart"><a href="http://localhost:5000/login" style="color: black;"><i class="i fa fa-user"></i></a></div>
+          </div>
+    <div id="result"></div>
+      
+        
+</body>
+<script>
+    function func(){
+    fetch('http://localhost:5000/re',{
+            mode:'cors',
+            method:'POST',
+            headers:{
+                'Content-type':'application/json'
+            }
+        
+        })
+        .then((e)=>{
+            
+            return e.json()  
+        })
+        .then(async(e1)=>
+        {  
+            
+            if(e1.length!=0)
+            {
+            let temp ="" ;
+            let n1=1;
+            // Loop through each data and add a table row
+            for(let d of e1)
+            {
+                temp +=`<div class="container">
+            <div class="row">
+              <div class="col-md-4" style="left: -2cm;top:2cm;">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    
+                
+                    
+                   <center> 
+                      <div class="item active">
+                        <img src="${d.avatar}" alt="Los Angeles" style="width:100%;">
+                      </div>
+                
+                      
+                    
+                
+                  
+                    
+                  </div></center>
+              </div>
+              <div class="col-md-8">
+                
+               
+                <div class="container">
+                    <div class="row">
+                      <div class="col-md-2">
+                        <center><h1 style="font-size: 18px;">MAX AMOUNT:RS ${String(d.max)} / mo</h1></center>
+                      </div>
+                      <div class="col-md-2">
+                        <center><h1 style="font-size: 18px;">MIN AMOUNT:RS ${d.min} / mo</h1></center>
+                      </div>
+                      </div>
+              </div>
+              <br>
+              <button style="background-color: #FF5733; color: white; border-style: none; width: 10cm; height: 1cm;">Compare</button>
+              <h1 style="font-size: 18px;">High Lights</h1>
+           <ul style="padding-left: 2cm;">
+            <li style="padding-top: .4cm;">
+                Effective Pixels: 12.1 MP
+            </li>
+            <li style="padding-top: .4cm;">
+                Sensor Type: CMOS
+            </li>
+            <li style="padding-top: .4cm;">
+                WiFi Available
+            </li>
+            <li style="padding-top: .4cm;"> 
+                4K
+            </li>
+           </ul>
+           
+           <h1 style="font-size: 18px; border-style: solid;padding: .3cm;">Safety precautions during COVID-19. We’re taking additional steps and precautionary measures to protect our community from COVID-19.</h1>
+           
+           </div>
+
+            <div class="container">
+              <div class="row">
+                  <div class="col-md-2" >
+                    <button style="background-color: #FF5733; color: white; border-style: none; width: 10cm; height: 1cm; margin-left: 10.3cm;margin-top: 0.7cm;">Add To Cart</button>
+                  </div>
+                  </div>`;
+                n1+=1;
+            }
+
+        document.getElementById("result").innerHTML = temp;
+        }
+        else{
+            document.getElementById("result").innerHTML = "No record found";
+        }
+          
+        })
+        .catch(async()=>{
+            console.log("ERROR");
+            result.innerHTML="ERROR";
+        })
+    }
+       
+        
+</script>
+</html>
